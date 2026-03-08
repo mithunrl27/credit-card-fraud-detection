@@ -2,9 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # load dataset
-df = pd.read_csv("data/fraudTrain.csv")
+df = pd.read_csv("data/fraudTest.csv")
 
-# 1️⃣ Fraud vs Normal transactions
+# Fraud vs Normal transactions
 fraud_counts = df["is_fraud"].value_counts()
 
 plt.figure()
@@ -16,7 +16,7 @@ plt.ylabel("Count")
 plt.show()
 
 
-# 2️⃣ Transaction Amount Distribution
+# Transaction Amount Distribution
 plt.figure()
 
 plt.hist(df["amt"], bins=50)
@@ -28,7 +28,7 @@ plt.ylabel("Frequency")
 plt.show()
 
 
-# 3️⃣ Fraud transactions by category
+# Fraud transactions by category
 fraud_data = df[df["is_fraud"] == 1]
 
 category_counts = fraud_data["category"].value_counts().head(10)
